@@ -110,4 +110,11 @@ export const api = {
     if (!res.ok) throw new Error('获取AI学习数据失败');
     return res.json();
   },
+
+  // 获取币安市场数据
+  async getMarketData(symbol: string = 'BTCUSDT'): Promise<any> {
+    const res = await fetch(`${API_BASE}/market/binance/${symbol}`);
+    if (!res.ok) throw new Error('获取市场数据失败');
+    return res.json();
+  },
 };
