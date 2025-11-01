@@ -2,6 +2,8 @@ import useSWR from 'swr';
 import { api } from '../lib/api';
 import type { CompetitionData } from '../types';
 import { ComparisonChart } from './ComparisonChart';
+import { BinanceFuturesMonitor } from './BinanceFuturesMonitor';
+import { TopCryptocurrencies } from './TopCryptocurrencies';
 import { useLanguage } from '../contexts/LanguageContext';
 import { t } from '../i18n/translations';
 import { getTraderColor } from '../utils/traderColors';
@@ -51,6 +53,12 @@ export function CompetitionPage() {
 
   return (
     <div className="space-y-5 animate-fade-in">
+      {/* BTC/USDT Futures Monitor */}
+      <BinanceFuturesMonitor />
+
+      {/* Top 20 Cryptocurrencies */}
+      <TopCryptocurrencies />
+
       {/* Competition Header - 精简版 */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
